@@ -10,7 +10,6 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 import javax.inject.Inject
 
-
 @HiltViewModel
 class BluetoothViewModel @Inject constructor(
     private val bluetoothController: BluetoothController
@@ -19,7 +18,7 @@ class BluetoothViewModel @Inject constructor(
     private val _state = MutableStateFlow(BluetoothUiState())
     val state = combine(
         bluetoothController.scannedDevices,
-        bluetoothController.pairedDevice,
+        bluetoothController.pairedDevices,
         _state
     ) { scannedDevices, pairedDevices, state ->
         state.copy(

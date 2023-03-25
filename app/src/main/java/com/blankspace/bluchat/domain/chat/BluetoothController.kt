@@ -3,8 +3,8 @@ package com.blankspace.bluchat.domain.chat
 import kotlinx.coroutines.flow.StateFlow
 
 interface BluetoothController {
-    val scannedDevices : StateFlow<List<BluetoothDeviceDomain>>
-    val pairedDevice : StateFlow<List<BluetoothDeviceDomain>>
+    val scannedDevices: StateFlow<List<BluetoothDevice>>
+    val pairedDevices: StateFlow<List<BluetoothDevice>>
 
     fun startDiscovery()
     fun stopDiscovery()
